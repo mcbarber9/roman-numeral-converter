@@ -16,7 +16,7 @@ export const startServer = () => {
   return new Promise((resolve, reject) => {
     const server = api.listen(port, () => {
       console.log(`Server running at http://localhost:${port}`);
-      resolve(server); // resolve with server instance
+      resolve(server);
     });
 
     server.on('error', (err) => reject(err));

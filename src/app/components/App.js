@@ -31,7 +31,6 @@ const App = () => {
           maxWidth="500px"
         >
           <h3 style={{ textAlign: 'center', fontSize: '42px'}}>Roman Numeral Converter</h3>
-          
           <Form
             onSubmit={e => {
               e.preventDefault();
@@ -46,12 +45,11 @@ const App = () => {
               marginBottom="size-200"
             />
           </Form>
-          
           <View marginTop="size-200">
             <Button
               UNSAFE_style={{ fontFamily: 'Times New Roman' }}
-              onPress={handleConversion} 
-              width="100%" 
+              onPress={handleConversion}
+              width="100%"
               marginBottom="size-200"
               variant="primary"
               isDisabled={!integer}
@@ -59,9 +57,8 @@ const App = () => {
               Convert to Roman Numeral
             </Button>
           </View>
-          
-          {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
-          {romanNumeral && <p style={{ color: 'green', textAlign: 'center', fontWeight: 'bold' }}>Roman Numeral: {romanNumeral}</p>}
+          {error && <p style={{ color: 'red', textAlign: 'center', fontFamily: 'Times New Roman' }}>{error}</p>}
+          {romanNumeral && <p style={{ color: 'green', textAlign: 'center', fontFamily: 'Times New Roman', fontWeight: 'bold' }}>Roman Numeral: {romanNumeral}</p>}
         </View>
       </Flex>
     </Provider>

@@ -40,7 +40,7 @@ The frontend is built with React and uses Adobe Spectrum for styling. It communi
 
 ### Error Handling
 
-Ensures input is a valid integer within ranger. Error is clear on the front end when criteria is not met.
+Ensures input is a valid integer within range. Error is clear on the front end when criteria is not met.
 
 ### Testing
 
@@ -51,6 +51,8 @@ Unit tests validate the Roman numeral conversion and API routes.
 ```sh
 npm test
 ```
+
+---
 
 ### Reference
 This project references the Roman numeral system as described on [Wikipedia](https://en.wikipedia.org/wiki/Roman_numerals).
