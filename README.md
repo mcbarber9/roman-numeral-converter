@@ -46,18 +46,10 @@ Ensures input is a valid integer within ranger. Error is clear on the front end 
 
 Unit tests validate the Roman numeral conversion and API routes.
 
-### How to Run Tests
-
-1. Run backend tests:
+### How to Run Unit Tests
 
 ```sh
-npm test -- --backend
-```
-
-2. Run frontend tests:
-
-```sh
-npm test -- --frontend
+npm test
 ```
 
 ### Reference
