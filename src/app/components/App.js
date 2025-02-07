@@ -29,6 +29,7 @@ const App = () => {
           UNSAFE_style={{ fontFamily: 'Times New Roman' }}
           width="100%"
           maxWidth="500px"
+          padding={{ base: 'size-200', M: 'size-300' }}
         >
           <h3 style={{ textAlign: 'center', fontSize: '42px'}}>Roman Numeral Converter</h3>
           <Form
