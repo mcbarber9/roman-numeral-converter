@@ -26,6 +26,7 @@ const App = () => {
     <Provider theme={defaultTheme}>
       <Flex direction="row" justifyContent="center" alignItems="center" height="100vh">
         <View
+          // Applying Times New Roman using the UNSAFE_style prop—because what better font for a Roman Numeral Converter?
           UNSAFE_style={{ fontFamily: 'Times New Roman' }}
           width="100%"
           maxWidth="500px"
