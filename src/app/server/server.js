@@ -9,6 +9,22 @@ const port = 8080;
 api.use(cors());
 api.use(express.json());
 
+// Logging Middleware
+api.use((req, res, next) => {
+  const timestamp = new Date().toISOString();
+  const method = req?.method;
+  const url = req?.url;
+  const userAgent = req?.headers['user-agent'] || 'Unknown';
+
+  // Log the status code after the response finishes
+  res.on('finish', () => {
+    const statusCode = res?.statusCode;
+    console.log(`[${timestamp}] ${method} ${url} - ${statusCode} (User-Agent: ${userAgent})`);
+  });
+
+  next();
+});
+
 // Routes
 api.use('/romannumeral', romanNumeralRoutes);
 
