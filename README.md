@@ -54,6 +54,30 @@ npm test
 
 ---
 
+### Docker Support (Optional)
+
+This project includes a Dockerfile for containerizing the backend API. This can be useful for deployment scenarios or ensuring consistent environments. For local development, running `npm start` is recommended.
+
+1. Build the Docker image:
+
+```sh
+docker build -t roman-numeral-converter .
+```
+
+2. Run the container:
+
+```sh
+docker run -p 8080:8080 roman-numeral-backend
+```
+
+3. Access the API
+
+```sh
+http://localhost:8080/romannumeral?query={integer}
+```
+
+---
+
 ### Reference
 This project references the Roman numeral system as described on [Wikipedia](https://en.wikipedia.org/wiki/Roman_numerals).
 

@@ -1,5 +1,5 @@
 # Use Node
-FROM node:22:13.1
+FROM node:22.13.1
 
 # Set the working directory
 WORKDIR /app
