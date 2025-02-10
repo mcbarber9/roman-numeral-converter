@@ -1,6 +1,16 @@
 import express from 'express';
 import cors from 'cors';
 import romanNumeralRoutes from './routes/romanNumeralRoutes.js';
+import pino from 'pino';
+
+const logger = pino({
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true,
+    },
+  },
+});
 
 const api = express();
 const port = 8080;
@@ -19,7 +29,9 @@ api.use((req, res, next) => {
   // Log the status code after the response finishes
   res.on('finish', () => {
     const statusCode = res?.statusCode;
-    console.log(`[${timestamp}] ${method} ${url} - ${statusCode} (User-Agent: ${userAgent})`);
+    logger.info(
+      `[${timestamp}] ${method} ${url} - ${statusCode} (User-Agent: ${userAgent})`
+    );
   });
 
   next();
@@ -31,11 +43,14 @@ api.use('/romannumeral', romanNumeralRoutes);
 export const startServer = () => {
   return new Promise((resolve, reject) => {
     const server = api.listen(port, () => {
-      console.log(`Server running at http://localhost:${port}`);
+      logger.info(`Server running at http://localhost:${port}`);
       resolve(server);
     });
 
-    server.on('error', (err) => reject(err));
+    server.on('error', (err) => {
+      logger.error('Error starting server:', err);
+      reject(err)
+    });
   });
 };
 
