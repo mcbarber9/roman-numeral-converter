@@ -1,4 +1,4 @@
-# Use an official Node.js runtime as a parent image
+# Use Node
 FROM node:18
 
 # Set the working directory
@@ -13,8 +13,8 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Expose the port your app runs on
+# Expose port
 EXPOSE 8080
 
-# Define the command to run your app
+# serve the app
 CMD ["npm", "start"]
